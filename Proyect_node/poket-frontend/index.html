@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pokenode</title>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6"> 
+    <h1 class="text-4xl font-bold text-red-600 mb-6">Pokedex</h1>
+
+<!-- Filtros de busqueda-->
+    <div class="w-full flex flex-col md:flex-row justify-center items-center gap-4 mt-6 mb-12">
+        <input type="text" id="nameFilter" placeholder="Buscar por nombre" class="w-full border p-2 rounded-lg">
+        <input type="number" id="idFilter" placeholder="Buscar por id" class="w-full border p-2 rounded-lg">
+        <select id="typeFilter" class="w-full border p-2 rounded-lg">
+            <option value="">Todos los tipos</option>
+            <option value="fire">Fuego</option>
+            <option value="water">Agua</option>
+            <option value="grass">Planta</option>
+            <option value="electric">Electrico</option>
+            <option value="psychic">Psíquico</option>
+            <option value="rock">Roca</option>
+            <option value="ground">Tierra</option>
+            <option value="bug">Bicho</option>
+            <option value="ghost">Fantasma</option>
+            <option value="dragon">Dragón</option>
+        </select>
+        <button id="searchBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Buscar</button>
+        <button id="clearBtn"  class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-gray-500">Limpiar</button>
+    </div>
+
+    <!--Contenedor de targetas-->
+    <div id="pokemon-container" class="grid grid-col-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full max-w-6xl"></div>
+
+    <!-- Paginacion desktop-->
+    <div class="hidden md:flex justify-center mt-8 space-x-4">
+        <button id="first" class="bg-green-500 hover.bg-green-600 text-white px-4 py-2 rounded-lg disable:opacity-50">Inicio</button>
+        <button id="prev" class="bg-blue-500 hover.bg-green-600 text-white px-4 py-2 rounded-lg disable:opacity-50">Anterior</button>
+        <button id="next" class="bg-blue-500 hover.bg-green-600 text-white px-4 py-2 rounded-lg disable:opacity-50">Siguiente</button>
+        <button id="last" class="bg-green-500 hover.bg-green-600 text-white px-4 py-2 rounded-lg disable:opacity-50">Ultimo</button>
+    </div>
+
+    <!-- Paginacion movil-->
+    <div class="md:hidden flex justify-center mt-8 space-x-4">
+        <button id="first"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Inicio</button>
+        <button id="prev"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"><</button>
+        <button id="next"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50">></button>
+        <button id="last"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Final</button>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
